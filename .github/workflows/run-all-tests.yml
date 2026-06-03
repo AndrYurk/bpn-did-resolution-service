@@ -71,6 +71,6 @@ jobs:
     needs: [ summary ]
     permissions:
       contents: write
+      packages: write
     if: ${{ (github.ref_name == 'main' || startsWith(github.ref_name, 'release/')) && (github.event_name == 'push' || inputs.publish == true) }}
     uses: ./.github/workflows/publish-docker.yaml
-
